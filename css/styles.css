@@ -1,0 +1,206 @@
+@import url(entypostyle.css);
+
+/**********************
+ * Global styling
+ *********************/
+
+
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #fff;
+  opacity: 0.25;
+}
+
+::selection {
+  color: #fff; 
+  background: #fff;
+  opacity: 0.25;
+}
+
+body {
+  background: #360033;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'IBM Plex Mono', sans-serif;
+  color: #fff;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+/**********************
+ * Intro
+ *********************/
+div.intro {
+  max-width: 800px;
+  margin: 150px;
+  font-size: 35px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 50px;
+}
+
+.intro a {
+text-decoration: none;
+color: white;
+display: inline-block;
+background-size: 120% 100%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+-moz-background-clip: text;
+-moz-text-fill-color: transparent;
+-ms-background-clip: text;
+-ms-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+transition: all 0.15s cubic-bezier(0.68, -0.25, 0.265, 1.25), opacity .3s ease-in-out;
+background-image: linear-gradient(45deg, #FD8BA9, #9A94E8, #2EDBF8, #F5F1C8, #FD8BA9);
+}
+
+.intro a:hover,
+.intro a:focus {
+  opacity: 0.5;
+  transition: opacity .3s ease-in-out;
+}
+
+
+/**********************
+ * Random Info
+ *********************/
+
+ul.randominfo {
+  margin: 150px;
+  padding: 0;
+  font-size: 1.00em;
+  list-style: none;
+}
+
+ul.randominfo li {
+  margin-bottom: 10px;
+  line-height: 1.5em;
+  }
+
+
+.randominfo a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+}
+.randominfo a span {
+	border-bottom: .09em solid;
+	padding-bottom: 1px;
+}
+
+.randominfo a {
+  transition: background-size 0.2s ease-out, color 0.3s ease 0s;
+  background: linear-gradient(to right, transparent 0%, #60F2CF 0) 0 .1em/0 100% no-repeat;
+  padding: 0 .2em 0.35em .2em;
+  margin: 0 -.2em -0.35em -.2em;
+}
+
+.randominfo a:hover,
+.randominfo a:active,
+.randominfo a:focus {
+  background-size: 100% 100%;
+  color: #000;
+}
+
+/**********************
+ * Mobile styling
+ *********************/
+
+
+/* If the screen size is 890px or less */
+@media only screen and (max-width: 890px) {
+  html {
+    font-size: 70%;
+  }
+
+  div.intro{
+      margin: 50px;
+      line-height: 1.5em;
+  }
+
+  
+  ul.randominfo {
+      margin: 50px;
+      font-size: 1.25em;
+    text-indent: -1.75em;
+  }
+  
+  ul.randominfo li {
+      margin-bottom: 20px;
+  }
+
+}
+
+
+
+
+
+/**********************
+ * Other randome explorations
+ *********************/
+
+
+/*Changing rainbow on hover links*/
+a.rainbow {
+  color: #fff;
+  transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+  text-decoration: underline;
+  color: #fff;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+}
+
+
+a.rainbow:hover {
+  -webkit-animation: zomg 3s infinite;
+  -moz-animation: zomg 3s infinite;
+  animation: zomg 3s infinite;
+}
+
+@-webkit-keyframes zomg {
+  0%, 100% { color: #7ccdea; }
+  16%      { color: #0074D9; }
+  32%      { color: #2ECC40; }
+  48%      { color: #FFDC00; }
+  64%      { color: #B10DC9; }
+  80%      { color: #FF4136; }
+}
+@-moz-keyframes zomg {
+  0%, 100% { color: #7ccdea; }
+  16%      { color: #0074D9; }
+  32%      { color: #2ECC40; }
+  48%      { color: #FFDC00; }
+  64%      { color: #B10DC9; }
+  80%      { color: #FF4136; }
+}
+@keyframes zomg {
+  0%, 100% { color: #7ccdea; }
+  16%      { color: #0074D9; }
+  32%      { color: #2ECC40; }
+  48%      { color: #FFDC00; }
+  64%      { color: #B10DC9; }
+  80%      { color: #FF4136; }
+}
